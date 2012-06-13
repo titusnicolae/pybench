@@ -2,7 +2,7 @@ from pybench import Test
 
 # this pollutes the namespace quite a bit
 #from sage.all_cmdline import *
-"""
+
 class RealPart(Test):
     version=1.0
     operations = 1
@@ -205,7 +205,7 @@ class R8(Test):
                     est += f(x=c)
                 return est*Deltax
             x=var('x')
-"""
+
 class R9(Test):
     version=1.0
     operations = 1
