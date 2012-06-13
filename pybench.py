@@ -62,10 +62,10 @@ LINE = 79
 MIN_TEST_RUNTIME = 1e-6
 
 # Number of calibration runs to use for calibrating the tests
-CALIBRATION_RUNS = 20
+CALIBRATION_RUNS = 5
 
 # Number of calibration loops to run for each calibration run
-CALIBRATION_LOOPS = 20
+CALIBRATION_LOOPS = 5
 
 # Allow skipping calibration ?
 ALLOW_SKIPPING_CALIBRATION = 1

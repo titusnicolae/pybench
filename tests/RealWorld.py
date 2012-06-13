@@ -15,7 +15,7 @@ class RealPart(Test):
             _sage_const_1 = Integer(1)
             def f(z): 
                 return sqrt(_sage_const_1 /_sage_const_3 )*z**_sage_const_2  + i/_sage_const_3 
-            real(f(f(f(f(i/_sage_const_2 )))))
+            real(f(f(f(f(f(i/_sage_const_2 ))))))
 
     def calibrate(self):
         from sage.all_cmdline import Integer, sqrt, i
@@ -26,7 +26,7 @@ class RealPart(Test):
             def f(z): 
                 return sqrt(_sage_const_1 /_sage_const_3 )*z**_sage_const_2  + i/_sage_const_3 
 
-class R2(Test):
+class Hermite(Test):
     version=1.0
     operations = 1
     rounds = 1
@@ -36,7 +36,7 @@ class R2(Test):
             _sage_const_2 = Integer(2)
             _sage_const_1 = Integer(1)
             _sage_const_0 = Integer(0)
-            _sage_const_15 = Integer(15)
+            _sage_const_15 = Integer(18)
             def hermite(n,y):
                 if n == _sage_const_1 : return _sage_const_2 *y
                 if n == _sage_const_0 : return _sage_const_1 
@@ -55,28 +55,39 @@ class R2(Test):
                 if n == _sage_const_0 : return _sage_const_1 
                 return expand(_sage_const_2 *y*hermite(n-_sage_const_1 ,y) - _sage_const_2 *(n-_sage_const_1 )*hermite(n-_sage_const_2 ,y))
 
-class R3(Test):
+class Equality(Test):   #a lot of overhead for this test
     version=1.0
     operations = 1
     rounds = 1
     def test(self):
         from sage.all_cmdline import Integer,var
         for _ in xrange(self.rounds):
-            _sage_const_10 = Integer(10)    
-            var('x,y,z') 
-            f = x+y+z
+            _sage_const_10 = Integer(10)   
+            l=[]
+            for j in xrange(1,10):
+                l.append("q"+str(j))
+            s=reduce(lambda a,b: a+","+b,l)
+            sp=reduce(lambda a,b: a+"+"+b,l)
+            var(s) 
+            f = eval(sp)
             a = [bool(f==f) for _ in range(_sage_const_10 )]
     def calibrate(self):
         from sage.all_cmdline import Integer,var
         for _ in xrange(self.rounds):
             _sage_const_10 = Integer(10)    
-            var('x,y,z') 
-            f = x+y+z
+            l=[]
+            for j in xrange(1,10):
+                l.append("q"+str(j))
+            s=reduce(lambda a,b: a+","+b,l)
+            sp=reduce(lambda a,b: a+"+"+b,l)
+            var(s) 
+            f = eval(sp)
 
-class R4(Test):
+
+class Cardinality(Test):
     version=1.0
     operations = 1
-    rounds = 1
+    rounds = 250
     def test(self):
         from sage.all_cmdline import Integer, sqrt, e, pi, Tuples 
         for _ in xrange(self.rounds):
@@ -92,7 +103,7 @@ class R4(Test):
             u = [e, pi, sqrt(_sage_const_2 )]
 
 
-class R5(Test):
+class Blowup(Test):
     version=1.0
     operations = 1
     rounds = 1
@@ -102,7 +113,7 @@ class R5(Test):
             _sage_const_2 = Integer(2)
             _sage_const_1 = Integer(1)
             _sage_const_0 = Integer(0)
-            _sage_const_8 = Integer(8)
+            _sage_const_8 = Integer(14)
             def blowup(L,n):
                 for i in (ellipsis_range(_sage_const_0 ,Ellipsis,n)):
                     L.append( (L[i] + L[i+_sage_const_1 ]) * L[i+_sage_const_2 ] )
@@ -116,7 +127,7 @@ class R5(Test):
             _sage_const_2 = Integer(2)
             _sage_const_1 = Integer(1)
             _sage_const_0 = Integer(0)
-            _sage_const_8 = Integer(8)
+            _sage_const_8 = Integer(14)
             def blowup(L,n):
                 for i in (ellipsis_range(_sage_const_0 ,Ellipsis,n)):
                     L.append( (L[i] + L[i+_sage_const_1 ]) * L[i+_sage_const_2 ] )
@@ -125,22 +136,22 @@ class R5(Test):
             blowup(L,_sage_const_8 )
 
 
-class R6(Test):
+class Simplify(Test):
     version=1.0
     operations = 1
     rounds = 1
     def test(self):
         from sage.all_cmdline import Integer, sin 
         for _ in xrange(self.rounds):
-            _sage_const_100 = Integer(100)
+            _sage_const_100 = Integer(400)
             sum(((x+sin(i))/x+(x-sin(i))/x).rational_simplify() for i in xrange(_sage_const_100 )) 
 
     def calibrate(self):
         from sage.all_cmdline import Integer
         for _ in xrange(self.rounds):
-            _sage_const_100 = Integer(100)
+            _sage_const_100 = Integer(400)
 
-class R7(Test):
+class Evaluate(Test):
     version=1.0
     operations = 1
     rounds = 1
@@ -153,7 +164,7 @@ class R7(Test):
             _sage_const_4 = Integer(4)
             _sage_const_9 = Integer(9)
             _sage_const_12 = Integer(12)
-            _sage_const_10 = Integer(10)
+            _sage_const_10 = Integer(9)
             _sage_const_18 = Integer(18)
             _sage_const_21 = Integer(21)
             _sage_const_34 = Integer(34)
@@ -178,14 +189,18 @@ class R7(Test):
             _sage_const_24 = Integer(24)
             x=var('x') 
             f = x**_sage_const_24 +_sage_const_34 *x**_sage_const_12 +_sage_const_45 *x**_sage_const_3 +_sage_const_9 *x**_sage_const_18  +_sage_const_34 *x**_sage_const_10 + _sage_const_32 *x**_sage_const_21 
-class R8(Test):
+class Riemann(Test):
     version=1.0
     operations = 1
     rounds = 1
     def test(self):
         from sage.all_cmdline import Integer, var 
         for _ in xrange(self.rounds):
-            _sage_const_2 = Integer(2); _sage_const_10 = Integer(10); _sage_const_0 = Integer(0); _sage_const_5 = Integer(5); _sage_const_4 = Integer(4)
+            _sage_const_2 = Integer(2)
+            _sage_const_10 = Integer(11)
+            _sage_const_0 = Integer(0)
+            _sage_const_5 = Integer(5)
+            _sage_const_4 = Integer(4)
             def right(f,a,b,n):
                 Deltax = (b-a)/n; c=a; est=_sage_const_0 
                 for _ in range(n):
@@ -206,7 +221,7 @@ class R8(Test):
                 return est*Deltax
             x=var('x')
 
-class R9(Test):
+class Factor(Test):
     version=1.0
     operations = 1
     rounds = 1
@@ -222,7 +237,7 @@ class R9(Test):
             _sage_const_20 = Integer(20); _sage_const_5 = Integer(5)
             var('x,y')
  
-class R10(Test):
+class EquallySpacedList(Test):
     version=1.0
     operations = 1
     rounds = 1
@@ -230,26 +245,26 @@ class R10(Test):
         from sage.all_cmdline import Integer, ellipsis_range, pi 
         for _ in xrange(self.rounds):
             _sage_const_1 = Integer(1)
-            _sage_const_10 = Integer(10)
+            _sage_const_10 = Integer(40000)
             v = (ellipsis_range(-pi,-pi+_sage_const_1 /_sage_const_10 ,Ellipsis,pi))
     def calibrate(self):
         from sage.all_cmdline import Integer
         for _ in xrange(self.rounds):
             _sage_const_1 = Integer(1)
-            _sage_const_10 = Integer(10)
+            _sage_const_10 = Integer(1000)
 
-class R11(Test):
+class ComplexList(Test):
     version=1.0
     operations = 1
-    rounds = 1200
+    rounds = 1 
     def test(self):
         from sage.all_cmdline import Integer, random, ellipsis_range,I
         for _ in xrange(self.rounds):
             _sage_const_0 = Integer(0)
-            _sage_const_1000 = Integer(1000)
+            _sage_const_1000 = Integer(2000)
             a = [random() + random()*I for w in (ellipsis_range(_sage_const_0 ,Ellipsis,_sage_const_1000 ))]
     def calibrate(self):
         from sage.all_cmdline import Integer
         for _ in xrange(self.rounds):
             _sage_const_0 = Integer(0)
-            _sage_const_1000 = Integer(1000)
+            _sage_const_1000 = Integer(2000)

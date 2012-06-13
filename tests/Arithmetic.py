@@ -3,7 +3,7 @@ from sage.symbolic.ring import SR
 
 class SimpleIntegerArithmetic(Test):
 
-    version = 2.0
+    version = 1.0
     operations = 5 * (3 + 5 + 5 + 3 + 3 + 3)
     rounds = 120000
 
@@ -158,7 +158,7 @@ class SimpleIntegerArithmetic(Test):
 
 class SimpleFloatArithmetic(Test):
 
-    version = 2.0
+    version = 1.0
     operations = 5 * (3 + 5 + 5 + 3 + 3 + 3)
     rounds = 120000
 
@@ -313,7 +313,7 @@ class SimpleFloatArithmetic(Test):
 
 class SimpleIntFloatArithmetic(Test):
 
-    version = 2.0
+    version = 1.0
     operations = 5 * (3 + 5 + 5 + 3 + 3 + 3)
     rounds = 120000
 
@@ -469,7 +469,7 @@ class SimpleIntFloatArithmetic(Test):
 
 class SimpleLongArithmetic(Test):
 
-    version = 2.0
+    version = 1.0
     operations = 5 * (3 + 5 + 5 + 3 + 3 + 3)
     rounds = 60000
 
@@ -624,7 +624,7 @@ class SimpleLongArithmetic(Test):
 
 class SimpleComplexArithmetic(Test):
 
-    version = 2.0
+    version = 1.0
     operations = 5 * (3 + 5 + 5 + 3 + 3 + 3)
     rounds = 80000
 
