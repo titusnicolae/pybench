@@ -18,7 +18,7 @@
 import sage.all
 
 # Defaults
-Number_of_rounds = 1
+Number_of_rounds = 10
 Warp_factor = 1
 
 # Import tests

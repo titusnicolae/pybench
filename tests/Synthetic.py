@@ -8,6 +8,7 @@ class ExpandTrinomial(Test):
     operations = 1
     rounds = 1
     def test(self):
+        print "expand trinomial"
         from sage.all_cmdline import Integer, expand, var
         for i in xrange(self.rounds):
             _sage_const_1 = Integer(1)
@@ -16,6 +17,7 @@ class ExpandTrinomial(Test):
             f = (x+y+z+_sage_const_1 )**_sage_const_7 
             g = expand(f*(f+_sage_const_1 )); 
     def calibrate(self):
+        print "expand trinomial calbrate"
         from sage.all_cmdline import Integer, var
         for i in xrange(self.rounds):
             _sage_const_1 = Integer(1)
