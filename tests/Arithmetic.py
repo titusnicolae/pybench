@@ -11,9 +11,9 @@ class SimpleIntegerArithmetic(Test):
 
         for i in xrange(self.rounds):
 
-            a = 2
-            b = 3
-            c = 3
+            a = SR(2)
+            b = SR(3)
+            c = SR(3)
 
             c = a + b
             c = b + c
@@ -39,9 +39,9 @@ class SimpleIntegerArithmetic(Test):
             c = b / a
             c = c / b
 
-            a = 2
-            b = 3
-            c = 3
+            a = SR(2)
+            b = SR(3)
+            c = SR(3)
 
             c = a + b
             c = b + c
@@ -67,9 +67,9 @@ class SimpleIntegerArithmetic(Test):
             c = b / a
             c = c / b
 
-            a = 2
-            b = 3
-            c = 3
+            a = SR(2)
+            b = SR(3)
+            c = SR(3)
 
             c = a + b
             c = b + c
@@ -95,9 +95,9 @@ class SimpleIntegerArithmetic(Test):
             c = b / a
             c = c / b
 
-            a = 2
-            b = 3
-            c = 3
+            a = SR(2)
+            b = SR(3)
+            c = SR(3)
 
             c = a + b
             c = b + c
@@ -123,9 +123,9 @@ class SimpleIntegerArithmetic(Test):
             c = b / a
             c = c / b
 
-            a = 2
-            b = 3
-            c = 3
+            a = SR(2)
+            b = SR(3)
+            c = SR(3)
 
             c = a + b
             c = b + c
@@ -166,9 +166,9 @@ class SimpleFloatArithmetic(Test):
 
         for i in xrange(self.rounds):
 
-            a = 2.1
-            b = 3.3332
-            c = 3.14159
+            a = SR(2.1)
+            b = SR(3.3332)
+            c = SR(3.14159)
 
             c = a + b
             c = b + c
@@ -194,9 +194,9 @@ class SimpleFloatArithmetic(Test):
             c = b / a
             c = c / b
 
-            a = 2.1
-            b = 3.3332
-            c = 3.14159
+            a = SR(2.1)
+            b = SR(3.3332)
+            c = SR(3.14159)
 
             c = a + b
             c = b + c
@@ -222,9 +222,9 @@ class SimpleFloatArithmetic(Test):
             c = b / a
             c = c / b
 
-            a = 2.1
-            b = 3.3332
-            c = 3.14159
+            a = SR(2.1)
+            b = SR(3.3332)
+            c = SR(3.14159)
 
             c = a + b
             c = b + c
@@ -250,9 +250,9 @@ class SimpleFloatArithmetic(Test):
             c = b / a
             c = c / b
 
-            a = 2.1
-            b = 3.3332
-            c = 3.14159
+            a = SR(2.1)
+            b = SR(3.3332)
+            c = SR(3.14159)
 
             c = a + b
             c = b + c
@@ -278,9 +278,9 @@ class SimpleFloatArithmetic(Test):
             c = b / a
             c = c / b
 
-            a = 2.1
-            b = 3.3332
-            c = 3.14159
+            a = SR(2.1)
+            b = SR(3.3332)
+            c = SR(3.14159)
 
             c = a + b
             c = b + c
@@ -321,9 +321,9 @@ class SimpleIntFloatArithmetic(Test):
 
         for i in xrange(self.rounds):
 
-            a = 2
-            b = 3
-            c = 3.14159
+            a = SR(2)
+            b = SR(3)
+            c = SR(3.14159)
 
             c = a + b
             c = b + c
@@ -349,9 +349,9 @@ class SimpleIntFloatArithmetic(Test):
             c = b / a
             c = c / b
 
-            a = 2
-            b = 3
-            c = 3.14159
+            a = SR(2)
+            b = SR(3)
+            c = SR(3.14159)
 
             c = a + b
             c = b + c
@@ -377,9 +377,9 @@ class SimpleIntFloatArithmetic(Test):
             c = b / a
             c = c / b
 
-            a = 2
-            b = 3
-            c = 3.14159
+            a = SR(2)
+            b = SR(3)
+            c = SR(3.14159)
 
             c = a + b
             c = b + c
@@ -405,9 +405,9 @@ class SimpleIntFloatArithmetic(Test):
             c = b / a
             c = c / b
 
-            a = 2
-            b = 3
-            c = 3.14159
+            a = SR(2)
+            b = SR(3)
+            c = SR(3.14159)
 
             c = a + b
             c = b + c
@@ -433,9 +433,9 @@ class SimpleIntFloatArithmetic(Test):
             c = b / a
             c = c / b
 
-            a = 2
-            b = 3
-            c = 3.14159
+            a = SR(2)
+            b = SR(3)
+            c = SR(3.14159)
 
             c = a + b
             c = b + c
@@ -477,9 +477,9 @@ class SimpleLongArithmetic(Test):
 
         for i in xrange(self.rounds):
 
-            a = 2220001L
-            b = 100001L
-            c = 30005L
+            a = SR(2220001L)
+            b = SR(100001L)
+            c = SR(30005L)
 
             c = a + b
             c = b + c
@@ -505,9 +505,9 @@ class SimpleLongArithmetic(Test):
             c = b / a
             c = c / b
 
-            a = 2220001L
-            b = 100001L
-            c = 30005L
+            a = SR(2220001L)
+            b = SR(100001L)
+            c = SR(30005L)
 
             c = a + b
             c = b + c
@@ -533,9 +533,9 @@ class SimpleLongArithmetic(Test):
             c = b / a
             c = c / b
 
-            a = 2220001L
-            b = 100001L
-            c = 30005L
+            a = SR(2220001L)
+            b = SR(100001L)
+            c = SR(30005L)
 
             c = a + b
             c = b + c
@@ -561,9 +561,9 @@ class SimpleLongArithmetic(Test):
             c = b / a
             c = c / b
 
-            a = 2220001L
-            b = 100001L
-            c = 30005L
+            a = SR(2220001L)
+            b = SR(100001L)
+            c = SR(30005L)
 
             c = a + b
             c = b + c
@@ -589,9 +589,9 @@ class SimpleLongArithmetic(Test):
             c = b / a
             c = c / b
 
-            a = 2220001L
-            b = 100001L
-            c = 30005L
+            a = SR(2220001L)
+            b = SR(100001L)
+            c = SR(30005L)
 
             c = a + b
             c = b + c
@@ -632,9 +632,9 @@ class SimpleComplexArithmetic(Test):
 
         for i in xrange(self.rounds):
 
-            a = 2 + 3j
-            b = 2.5 + 4.5j
-            c = 1.2 + 6.2j
+            a = SR(2 + 3j)
+            b = SR(2.5 + 4.5j)
+            c = SR(1.2 + 6.2j)
 
             c = a + b
             c = b + c
@@ -660,9 +660,9 @@ class SimpleComplexArithmetic(Test):
             c = b / a
             c = c / b
 
-            a = 2 + 3j
-            b = 2.5 + 4.5j
-            c = 1.2 + 6.2j
+            a = SR(2 + 3j)
+            b = SR(2.5 + 4.5j)
+            c = SR(1.2 + 6.2j)
 
             c = a + b
             c = b + c
@@ -688,9 +688,9 @@ class SimpleComplexArithmetic(Test):
             c = b / a
             c = c / b
 
-            a = 2 + 3j
-            b = 2.5 + 4.5j
-            c = 1.2 + 6.2j
+            a = SR(2 + 3j)
+            b = SR(2.5 + 4.5j)
+            c = SR(1.2 + 6.2j)
 
             c = a + b
             c = b + c
@@ -716,9 +716,9 @@ class SimpleComplexArithmetic(Test):
             c = b / a
             c = c / b
 
-            a = 2 + 3j
-            b = 2.5 + 4.5j
-            c = 1.2 + 6.2j
+            a = SR(2 + 3j)
+            b = SR(2.5 + 4.5j)
+            c = SR(1.2 + 6.2j)
 
             c = a + b
             c = b + c
@@ -744,9 +744,9 @@ class SimpleComplexArithmetic(Test):
             c = b / a
             c = c / b
 
-            a = 2 + 3j
-            b = 2.5 + 4.5j
-            c = 1.2 + 6.2j
+            a = SR(2 + 3j)
+            b = SR(2.5 + 4.5j)
+            c = SR(1.2 + 6.2j)
 
             c = a + b
             c = b + c

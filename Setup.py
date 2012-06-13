@@ -12,9 +12,14 @@
 # should then be embedded in try-except clauses in this configuration
 # module.
 
+# import sage.all before anything else
+# this makes sure Sage is initialized as intended and we don't run
+# into any unexpected segfaults
+import sage.all
+
 # Defaults
-Number_of_rounds = 10
-Warp_factor = 10
+Number_of_rounds = 1
+Warp_factor = 1
 
 # Import tests
 

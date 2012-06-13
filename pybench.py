@@ -59,7 +59,7 @@ PERCENT = 100
 LINE = 79
 
 # Minimum test run-time
-MIN_TEST_RUNTIME = 1e-3
+MIN_TEST_RUNTIME = 1e-6
 
 # Number of calibration runs to use for calibrating the tests
 CALIBRATION_RUNS = 20
