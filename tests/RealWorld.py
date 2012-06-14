@@ -3,7 +3,7 @@ import random
 # this pollutes the namespace quite a bit
 #from sage.all_cmdline import *
 
-class ZBlowup(Test):
+class Blowup(Test):
     version=1.0
     operations = 1
     rounds = 1
@@ -12,7 +12,6 @@ class ZBlowup(Test):
                 set_random_seed,expand
         from itertools import izip
 
-        print "Blowup"
         for _ in xrange(self.rounds):
             def blowup(L,n):
                 R=[e for e in L]
@@ -32,7 +31,6 @@ class ZBlowup(Test):
                 set_random_seed
         set_random_seed(0)
         random.seed(0)
-        print "blowup calibrate"
         for _ in xrange(self.rounds):
             def blowup(L,n):
                 R=[e for e in L]
@@ -114,19 +112,20 @@ class Equality(Test):   #a lot of overhead for this test
         """
         from sage.all_cmdline import Integer,var
         for _ in xrange(self.rounds):
-            _sage_const_10 = Integer(10)   
+            _sage_const_10 = Integer(500)   
             l=[]
-            for j in xrange(1,10):
+            for j in xrange(1,1000):
                 l.append("q"+str(j))
             s=reduce(lambda a,b: a+","+b,l)
             sp=reduce(lambda a,b: a+"+"+b,l)
             var(s) 
             f = eval(sp)
+
             a = [bool(f==f) for _ in range(_sage_const_10 )]
     def calibrate(self):
         from sage.all_cmdline import Integer,var
         for _ in xrange(self.rounds):
-            _sage_const_10 = Integer(10)    
+            _sage_const_10 = Integer(10)   
             l=[]
             for j in xrange(1,10):
                 l.append("q"+str(j))
@@ -167,13 +166,13 @@ class Simplify(Test):
     def test(self):
         from sage.all_cmdline import Integer, sin 
         for _ in xrange(self.rounds):
-            _sage_const_100 = Integer(400)
+            _sage_const_100 = Integer(1400)
             sum(((x+sin(i))/x+(x-sin(i))/x) for i in xrange(_sage_const_100 )) 
 
     def calibrate(self):
         from sage.all_cmdline import Integer
         for _ in xrange(self.rounds):
-            _sage_const_100 = Integer(400)
+            _sage_const_100 = Integer(1400)
 
 class Evaluate(Test):
     version=1.0
@@ -244,23 +243,6 @@ class Riemann(Test):
                     est += f(x=c)
                 return est*Deltax
             x=var('x')
-"""
-class Factor(Test):
-    version=1.0
-    operations = 1
-    rounds = 1
-    def test(self):
-        from sage.all_cmdline import Integer, factor,var,pi 
-        for _ in xrange(self.rounds):
-            _sage_const_20 = Integer(20); _sage_const_5 = Integer(5)
-            var('x,y')
-            factor(x**_sage_const_20  - pi**_sage_const_5 *y**_sage_const_20 ); 
-    def calibrate(self):
-        from sage.all_cmdline import Integer,var
-        for _ in xrange(self.rounds):
-            _sage_const_20 = Integer(20); _sage_const_5 = Integer(5)
-            var('x,y')
-"""
 
 class EquallySpacedList(Test):
     version=1.0

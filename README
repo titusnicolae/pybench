@@ -1,0 +1,5 @@
+#Run with 
+sage pybench.py 
+
+#or when debugging, run with:
+sage pybench --debug 

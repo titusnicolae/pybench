@@ -1,0 +1,64 @@
+-------------------------------------------------------------------------------
+PYBENCH 2.0
+-------------------------------------------------------------------------------
+* using CPython 2.7.2 (default, May 1 2012, 11:48:38) [GCC 4.5.3]
+* disabled garbage collection
+* system check interval set to maximum: 2147483647
+* using timer: time.time
+
+Calibrating tests. Please wait... done.
+
+Running 10 round(s) of the suite at warp factor 1:
+
+* Round 1 done in 17.395 seconds.
+* Round 2 done in 16.439 seconds.
+* Round 3 done in 16.337 seconds.
+* Round 4 done in 16.338 seconds.
+* Round 5 done in 16.413 seconds.
+* Round 6 done in 16.613 seconds.
+* Round 7 done in 16.592 seconds.
+* Round 8 done in 18.363 seconds.
+* Round 9 done in 18.396 seconds.
+* Round 10 done in 16.803 seconds.
+
+-------------------------------------------------------------------------------
+Benchmark: 2012-06-14 17:17:37
+-------------------------------------------------------------------------------
+
+    Rounds: 10
+    Warp:   1
+    Timer:  time.time
+
+    Machine Details:
+       Platform ID:    Linux-3.2.1-gentoo-r2-x86_64-Intel-R-_Core-TM-_i7_CPU_860_@_2.80GHz-with-gentoo-2.1
+       Processor:      Intel(R) Core(TM) i7 CPU 860 @ 2.80GHz
+    
+    Python:
+       Implementation: CPython
+       Executable:     /home/titusn/sage-5.0.beta14/local/bin/python
+       Version:        2.7.2
+       Compiler:       GCC 4.5.3
+       Bits:           64bit
+       Build:          May  1 2012 11:48:38 (#default)
+       Unicode:        UCS4
+
+
+Test                             minimum  average  operation  overhead
+-------------------------------------------------------------------------------
+                        Blowup:   1527ms   1600ms  1600361.78us    4.071ms
+                   Cardinality:    926ms    972ms  3886.74us   83.750ms
+                   ComplexList:    964ms   1001ms  1001331.07us    0.003ms
+                 DiffExpansion:   1136ms   1190ms  1190059.64us   71.656ms
+                      Equality:   1009ms   1032ms  1032383.30us    0.294ms
+             EquallySpacedList:    973ms   1022ms  1022279.36us    0.003ms
+                      Evaluate:   1230ms   1264ms  1264418.05us    0.419ms
+                    ExpandTrig:   1144ms   1180ms  1180162.31us    0.085ms
+               ExpandTrinomial:   1310ms   1354ms  1353792.31us    0.240ms
+                       Hermite:   1199ms   1240ms  1239703.01us    0.004ms
+                      RealPart:   1042ms   1076ms  1076262.04us    0.004ms
+                       Riemann:   1239ms   1274ms  1273943.83us    0.045ms
+                      Simplify:   1030ms   1070ms  1069817.40us    0.003ms
+                        Taylor:   1567ms   1693ms  1692618.92us    0.043ms
+-------------------------------------------------------------------------------
+Totals:                          16296ms  16969ms
+
